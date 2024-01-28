@@ -39,4 +39,14 @@ class DatabaseHelper {
     // }
     // it will return 1
   }
+
+  Future<List<Map<String, dynamic>>> retrieveAllData() async {
+    final Database? db = await databaseHelper.database;
+    return db!.query('Student');
+    // Note: It will return all data as a list of Map
+    //[
+    //     {"id": 1, "name": "anna"},
+    //     {"id": 2, "name": "Alexa"}
+    //   ]
+  }
 }
