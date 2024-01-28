@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sqflite_flutter_app/database_helper.dart';
 
 void main() => runApp(MyApp());
 
@@ -48,6 +49,10 @@ class _MyScreenState extends State<MyScreen> {
           //This is Retrieve Button
           TextButton(
             onPressed: () async {
+              //call retrieveAllData method
+              final List<Map<String, dynamic>> myDataList =
+                  await DatabaseHelper.databaseHelper.retrieveAllData();
+              print(myDataList);
             },
             style: TextButton.styleFrom(
                 backgroundColor: Colors.grey[600],
