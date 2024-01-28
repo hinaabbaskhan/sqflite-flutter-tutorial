@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
@@ -25,6 +27,51 @@ class _MyScreenState extends State<MyScreen> {
       appBar: AppBar(
         title: const Text('Sqflite FLutter Example'),
       ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          //This is Insert Button
+          TextButton(
+            onPressed: () async {
+            },
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.blue[700],
+                foregroundColor: Colors.white),
+            child: const Text('Insert'),
+          ),
+          //This is Retrieve Button
+          TextButton(
+            onPressed: () async {
+            },
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.grey[600],
+                foregroundColor: Colors.white),
+            child: const Text('Retrieve'),
+          ),
+          // This is Update Button
+          TextButton(
+            onPressed: () async {
+              //call update method
+            },
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.green[400],
+                foregroundColor: Colors.white),
+            child: const Text('Update'),
+          ),
+
+          // This is Delete Button
+          TextButton(
+            onPressed: () async {
+              //call delete method
+            },
+            style: TextButton.styleFrom(
+                backgroundColor: Colors.pink[400],
+                foregroundColor: Colors.white),
+            child: const Text('Delete'),
+          ),
+        ],
+      )),
     );
   }
 }
