@@ -34,6 +34,11 @@ class _MyScreenState extends State<MyScreen> {
           //This is Insert Button
           TextButton(
             onPressed: () async {
+              //call insert method
+              final Map<String, dynamic> record = {"id": 5, "name": "Anna"};
+              final recordId =
+                  await DatabaseHelper.databaseHelper.insert(record);
+              print(recordId);
             },
             style: TextButton.styleFrom(
                 backgroundColor: Colors.blue[700],
