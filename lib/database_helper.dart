@@ -28,4 +28,15 @@ class DatabaseHelper {
       ''');
   }
 
+  Future<int> insert(Map<String, dynamic> myrecord) async {
+    final Database? db = await databaseHelper.database;
+    return db!.insert('Student', myrecord);
+    //  Note it will return an integer id of the inserted record.
+    //  for example if we insert a myrecord
+    //  {
+    //   "id": 1,
+    //   "name": "Hanna",
+    // }
+    // it will return 1
+  }
 }
